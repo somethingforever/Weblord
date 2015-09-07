@@ -91,7 +91,6 @@
             }
             body{
                 padding: 20px;
-                background-color: rgba(218, 215, 215, 0.05);
                 height:calc(100% - 20px);
                 box-sizing: border-box;
             }
