@@ -133,6 +133,24 @@ var show=0;
 function myFunction(cena)
 {
   if(!document.getElementById('showbuttons'))document.getElementById('sentence').innerHTML += '<div id="showbuttons" style="opacity:0;"></div>';
+  if(cena==-1){
+      if(hide<=1){
+        hide=1000;
+        document.getElementById("sentence").style.opacity = 1;
+        startTyping("Ok, do you have any more questions?", 10, "add");
+        document.getElementById('showbuttons').innerHTML = 
+        '<a class="button" href="#" onClick="myFunction('+1+')">Hello?</a>'+
+        '<a class="button" href="#" onClick="myFunction('+2+')">Who are you?</a>'+
+        '<a class="button" href="#" onClick="myFunction('+-3+')">Newsletter</a>'+
+        '<a class="button" href="#" onClick="myFunction('+4+')">Are you a hacker?</a>';
+        showFunction(0);
+      }else{
+        hide-=80;
+        if(hide<=0)hide=1;
+        document.getElementById("sentence").style.opacity = hide/1000;
+        setTimeout("myFunction("+cena+")", 50);
+      }
+  }
   if(cena==0){
     if(hide<=1){
       hide=1000;
@@ -141,8 +159,8 @@ function myFunction(cena)
       document.getElementById('showbuttons').innerHTML = 
       '<a class="button" href="#" onClick="myFunction('+1+')">Hello?</a>'+
       '<a class="button" href="#" onClick="myFunction('+2+')">Who are you?</a>'+
-      '<a class="button" href="#" onClick="myFunction('+4+')">Newsletter</a>'+
-      '<a class="button" href="#" onClick="myFunction('+3+')">Are you a hacker?</a>';
+      '<a class="button" href="#" onClick="myFunction('+3+')">Newsletter</a>'+
+      '<a class="button" href="#" onClick="myFunction('+4+')">Are you a hacker?</a>';
       showFunction(0);
     }else{
       hide-=80;
@@ -157,8 +175,10 @@ function myFunction(cena)
       document.getElementById("sentence").style.opacity = 1;
       startTyping("Why hello there, is there anything i can do to help?", 10, "add");
       document.getElementById('showbuttons').innerHTML = 
-      '<a class="button2" href="#" onClick="myFunction('+0+')">I am lost</a>'+
-      '<a class="button2" href="#" onClick="myFunction('+0+')">No thanks bye</a>';
+      '<a class="button" href="#" onClick="myFunction('+11+')">I am lost</a>'+
+      '<a class="button" href="#" onClick="myFunction('+12+')">Tell me a story(will randomize)</a>'+
+      '<a class="button" href="#" onClick="myFunction('+13+')">Can i has a hug</a>'+
+      '<a class="button" href="#" onClick="myFunction('+-1+')">No thanks, im ok</a>';
       showFunction(0);
     }else{
       hide-=80;
@@ -167,14 +187,311 @@ function myFunction(cena)
       setTimeout("myFunction("+cena+")", 50);
     }
   }
+  if(cena==12){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("I love my new kids. Theyll love me too once I remove the duct tape and blindfolds.", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+121+')">Tell me another story(still will randomize)</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">Thank you</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==121){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("I know that zombies aren’t real. Unfortunately, that just makes the people eating my family even more terrifying.", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+121+')">Tell me another story(still will randomize and add more storys)</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">Thank you</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==13){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("No...", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+13+')">Please</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+131+')">Aww ok</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==131){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("Aww dont be that way, ill give you a hug", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">Yay</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+13+')">Can i has another</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==11){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("Oh, do you wish for me to find you?", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+111+')">Yes please</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">No thanks, im ok</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==111){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("You live in (insert code here)", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+1111+')">HOW DO YOU KNOW THAT?!</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+111+')">Are you a spy?(wip)</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+111+')">GET OUT OF MY PC?(wip)</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">Thank you mister</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==1111){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("A hacker never tells its secreat", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+4+')">So you are a hacker</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+11112+')">Im calling the FBI</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+1111+')">You hacked me?(wip)</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">Lets change the subject</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==11112){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("HAHAHA, what are you going to tell the FBI, what did i do wrong?", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+111121+')">You hacked me</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">Nothing, nevermind</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==111121){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("No i didnt", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+1111211+')">Yes you did</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">Yeah, your right</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==1111211){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("i did not", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+11112111+')">Yes you did</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">Yeah, your right</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==11112111){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("Seriously no i didnt", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+111121111+')">Yes you did</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">Yeah, your right</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==111121111){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("GOD DAM IT, I DID NOT!!", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+1111211111+')">Yes you did</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">Yeah, your right</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==1111211111){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("Let me explane you, on the web its easy to get the ip from the others internet and browser or device that you used. All i did was that i took a look of your network ip and it gave me more or less the place that you live, it didnt gave me an adress or anything", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+11112111111+')">You still hacked me then</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">Im sorry.</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==11112111111){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("No!Stop!Do you really wish for me to hack you or at least scare you a little?", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">No! oh ok you win, ill stop.</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+111121111112+')">I dare you!</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==111121111112){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("Ok just download this file and we will see what happends", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">Download(not working yet)</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">Im too scared, never mind.</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+    
   if(cena==2){
     if(hide<=1){
       hide=1000;
       document.getElementById("sentence").style.opacity = 1;
       startTyping("I am WEBLORD, THE BEST OF THE BEST OF THE BESTS", 10, "add");
       document.getElementById('showbuttons').innerHTML = 
-      '<a class="button2" href="#" onClick="myFunction('+0+')">Lies</a>'+
-      '<a class="button2" href="#" onClick="myFunction('+0+')">Ok thanks bye</a>';
+      '<a class="button2" href="#" onClick="myFunction('+21+')">Lies</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">Ok thanks bye</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }    
+  if(cena==21){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("YOU DARE TO INSULT A LORD?!", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+211+')">Yeah</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">Wait! No. Im sorry</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  } 
+  if(cena==211){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("Do you love your kids, wife and dog?", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button" href="#" onClick="myFunction('+2111+')">Yeah</a>'+
+      '<a class="button" href="#" onClick="myFunction('+211+')">Who?(wip)</a>'+
+      '<a class="button" href="#" onClick="myFunction('+211+')">Dog?(wip)</a>'+
+      '<a class="button" href="#" onClick="myFunction('+-1+')">Wait! I take it back, sorry</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }  
+  if(cena==-211){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("Well then!Do you love them", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button" href="#" onClick="myFunction('+2111+')">Yeah</a>'+
+      '<a class="button" href="#" onClick="myFunction('+2112+')">Who?</a>'+
+      '<a class="button" href="#" onClick="myFunction('+2113+')">Dog?</a>'+
+      '<a class="button" href="#" onClick="myFunction('+-1+')">Wait! I take it back, sorry</a>';
       showFunction(0);
     }else{
       hide-=80;
@@ -183,15 +500,194 @@ function myFunction(cena)
       setTimeout("myFunction("+cena+")", 50);
     }
   }
-
+  if(cena==2112){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("Y-you arent married?", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+-211+')">Yeah</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+21122+')">No...</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==21122){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("Oh... well do you have a best friend?", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+211221+')">Yeah</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+211222+')">What is a friend?</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==211221){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("Well then he will suffer", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button" href="#" onClick="myFunction('+2112211+')">Let him suffer</a>'+
+      '<a class="button" href="#" onClick="myFunction('+-1+')">He is a she</a>'+
+      '<a class="button" href="#" onClick="myFunction('+-1+')">Do you feel lonely?</a>'+
+      '<a class="button" href="#" onClick="myFunction('+-1+')">Wait! I take it back, sorry</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==2112211){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("Your an ass you know that?", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button" href="#" onClick="myFunction('+-1+')">Yeah</a>'+
+      '<a class="button" href="#" onClick="myFunction('+-1+')">Yeah</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+    if(cena==211222){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("That is sad bro", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+2112221+')">Im a girl</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">yeah...</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==2112221){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("Ok, that sad sis", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">HAHA FOOLED YOU(wip)</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">yeah...</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==2111){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("Would you like to see them suffer?", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button" href="#" onClick="myFunction('+21111+')">Yeah</a>'+
+      '<a class="button" href="#" onClick="myFunction('+21112+')">You woldent dare!</a>'+
+      '<a class="button" href="#" onClick="myFunction('+21113+')">Why are you soo mean?</a>'+
+      '<a class="button" href="#" onClick="myFunction('+-1+')">Wait! I take it back, sorry</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==21111){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("Are you that heartless?", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+211111+')">Yeah</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">NO!</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==211111){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("Are you stupid?", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">Yeah</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+2111111+')">NO!</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==2111111){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("Are you sure?", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+2111111+')">Yeah</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">NO!</a>';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
   if(cena==3){
     if(hide<=1){
       hide=1000;
       document.getElementById("sentence").style.opacity = 1;
-      startTyping("Haha i wish but why you ask?", 10, "add");
+      startTyping("Here it is", 10, "add");
       document.getElementById('showbuttons').innerHTML = 
-      '<a class="button2" href="#" onClick="myFunction('+5+')">Oh i dont know you look like one</a>'+
-      '<a class="button2" href="#" onClick="myFunction('+0+')">Ok thanks bye</a>';
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">I changed my mind</a>'+
+      '<form accept-charset="UTF-8" action="https://www.sendicate.net/subscribe/6zdvdf" method="post"> <label for="subscriber_name">Name</label> <input id="subscriber_name" name="subscriber[name]" type="text" /> <br /> <label for="subscriber_email">Email</label> <input id="subscriber_email" name="subscriber[email]" type="text" /> <br /> <input name="commit" type="submit" value="Subscribe your soul" /> </form> ';
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==-3){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("That is not a question but look", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">I changed my mind</a>'+
+      '<form accept-charset="UTF-8" action="https://www.sendicate.net/subscribe/6zdvdf" method="post"> <label for="subscriber_name">Name</label> <input id="subscriber_name" name="subscriber[name]" type="text" /> <br /> <label for="subscriber_email">Email</label> <input id="subscriber_email" name="subscriber[email]" type="text" /> <br /> <input name="commit" type="submit" value="Subscribe your soul" /> </form> ';
       showFunction(0);
     }else{
       hide-=80;
@@ -204,10 +700,10 @@ function myFunction(cena)
     if(hide<=1){
       hide=1000;
       document.getElementById("sentence").style.opacity = 1;
-      startTyping("In just a bit", 10, "add");
+      startTyping("Haha i wish but why you ask?", 10, "add");
       document.getElementById('showbuttons').innerHTML = 
-      '<a class="button2" href="#" onClick="myFunction('+0+')">I changed my mind</a>'+
-      '<form accept-charset="UTF-8" action="https://www.sendicate.net/subscribe/6zdvdf" method="post"> <label for="subscriber_name">Name</label> <input id="subscriber_name" name="subscriber[name]" type="text" /> <br /> <label for="subscriber_email">Email</label> <input id="subscriber_email" name="subscriber[email]" type="text" /> <br /> <input name="commit" type="submit" value="Subscribe your soul" /> </form> ';
+      '<a class="button2" href="#" onClick="myFunction('+41+')">Oh i dont know you look like one</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">uhh nevermind</a>';
       showFunction(0);
     }else{
       hide-=80;
@@ -216,15 +712,15 @@ function myFunction(cena)
       setTimeout("myFunction("+cena+")", 50);
     }
   }
-  if(cena==5){
+  if(cena==41){
     if(hide<=1){
       hide=1000;
       document.getElementById("sentence").style.opacity = 1;
       startTyping("wachusayboumeniga?!", 10, "add");
       document.getElementById('showbuttons').innerHTML = 
-      '<a class="button" href="#" onClick="myFunction('+0+')">WOW THE RACISM</a>'+
-      '<a class="button" href="#" onClick="myFunction('+6+')">DONT CLICK ME</a>'+      
-      '<a class="button lookout" href="#" onClick="myFunction('+0+')">WOW</a>'+
+      '<a class="button" href="#" onClick="myFunction('+411+')">WOW THE RACISM</a>'+
+      '<a class="button" href="#" onClick="myFunction('+412+')">DONT CLICK ME</a>'+      
+      '<a class="button lookout" href="#" onClick="myFunction('+413+')">WOW(wip)</a>'+
       '<a class="button" href="#" onClick="myFunction('+2+')">Seriously are you?</a>';
       showFunction(0);
     }else{
@@ -234,7 +730,39 @@ function myFunction(cena)
       setTimeout("myFunction("+cena+")", 50);
     }
   }
-  if(cena==6){
+  if(cena==411){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("HEY! Your the one who started", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">Im sorry</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+4112+')">Oh no i didnt</a>';      
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==4112){
+    if(hide<=1){
+      hide=1000;
+      document.getElementById("sentence").style.opacity = 1;
+      startTyping("Oh yes you did", 10, "add");
+      document.getElementById('showbuttons').innerHTML = 
+      '<a class="button2" href="#" onClick="myFunction('+-1+')">ok, im sorry</a>'+
+      '<a class="button2" href="#" onClick="myFunction('+4112+')">Oh no i didnt</a>';      
+      showFunction(0);
+    }else{
+      hide-=80;
+      if(hide<=0)hide=1;
+      document.getElementById("sentence").style.opacity = hide/1000;
+      setTimeout("myFunction("+cena+")", 50);
+    }
+  }
+  if(cena==412){
     if(hide<=1){
       hide=1000;
       document.getElementById("sentence").style.opacity = 1;
@@ -243,8 +771,8 @@ function myFunction(cena)
       document.body.style.width="100%";
       corruption();
       document.getElementById('showbuttons').innerHTML =      
-      '<a class="button preview-item shake shake-opacity shake-constant" href="#" onClick="myFunction('+0+')">What have i done?</a>'+
-      '<a class="button preview-item shake shake-opacity shake-constant" href="#" onClick="myFunction('+0+')">Shake that booty</a>';
+      '<a class="button preview-item shake shake-opacity shake-constant" href="#" onClick="myFunction('+-1+')">What have i done?</a>'+
+      '<a class="button preview-item shake shake-opacity shake-constant" href="#" onClick="myFunction('+4122+')">Shake that booty</a>';
       showFunction(0);
     }else{
       hide-=80;
@@ -254,7 +782,7 @@ function myFunction(cena)
     }
   }
 
-
+document.getElementById("_oss_online_page").innerHTML =cena;
 
 }
 
